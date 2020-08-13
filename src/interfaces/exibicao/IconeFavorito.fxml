@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="apIcone" prefHeight="160.0" prefWidth="370.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.exibicao.IconeFavoritoController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#40688d" height="112.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="370.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="imgPerfilCirc" fill="DODGERBLUE" layoutX="70.0" layoutY="80.0" radius="55.0" stroke="WHITE" strokeWidth="2.0" visible="false" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="24.0" />
+      <Rectangle fx:id="imgPerfilRec" arcHeight="6.0" arcWidth="6.0" fill="DODGERBLUE" height="160.0" layoutX="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="130.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Rectangle fill="#40688d" height="112.0" layoutX="123.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="40.0" AnchorPane.leftAnchor="128.0" AnchorPane.topAnchor="0.0" />
+      <Rectangle fill="WHITE" height="48.0" layoutX="135.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="128.0" AnchorPane.topAnchor="112.0" />
+      <TilePane hgap="18.0" layoutX="133.0" layoutY="15.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="60.0" prefWidth="220.0" tileAlignment="CENTER_LEFT" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <Label fx:id="lblSiglaPartido" alignment="CENTER_RIGHT" text="SIGLA" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="IsidoraSansAlt-Bold" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnSeguindo" focusTraversable="false" onAction="#btnSeguindoAction" prefWidth="100.0" ripplerFill="#686868" styleClass="buttonSeguindo" stylesheets="@../../stylesheets/Styles.css" text="SEGUINDO" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="8.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </TilePane>
+      <Label fx:id="lblCargo" layoutX="135.0" layoutY="88.0" text="CARGO" textFill="WHITE" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="88.0">
+         <font>
+            <Font name="IsidoraSansAlt-Bold" size="18.0" />
+         </font>
+      </Label>
+      <VBox layoutX="133.0" layoutY="108.0" prefHeight="44.0" prefWidth="225.0" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="112.0">
+         <children>
+            <Label fx:id="lblNomeUrna" text="Nome de Urna" textFill="#686868">
+               <font>
+                  <Font name="Isidora Sans Alt Medium" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lblNumero" text="00" textFill="#2ea3b4">
+               <font>
+                  <Font name="IsidoraSansAlt-Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</AnchorPane>

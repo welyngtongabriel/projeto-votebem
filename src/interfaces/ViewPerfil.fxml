@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewPerfilController">
+   <children>
+      <StackPane fx:id="perfil" layoutX="-5.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="830.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+         <children>
+            <StackPane fx:id="areaErros" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="830.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <AnchorPane fx:id="pnlErro500" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="80.0">
+                           <image>
+                              <Image url="@../modelo/icones/DamagedRobot.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="17.0" text="Ah, não!" textAlignment="CENTER" textFill="#686868" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="295.0">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="17.0" text="Não foi possível carregar este perfil." textAlignment="CENTER" textFill="#686868" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="320.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="125.0" />
+                     </StackPane.margin>
+                  </AnchorPane>
+                  <Pane>
+                     <children>
+                        <Label fx:id="lblErroDetalhes" alignment="CENTER" layoutX="150.0" prefHeight="17.0" text="Detalhes" textAlignment="CENTER" textFill="#686868">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets right="465.0" top="340.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label fx:id="lblErro" layoutX="150.0" layoutY="35.0" prefHeight="25.0" text="#Error code:" textFill="#d37e7e">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets right="490.0" top="410.0" />
+                           </StackPane.margin>
+                        </Label>
+                     </children>
+                     <StackPane.margin>
+                        <Insets top="410.0" />
+                     </StackPane.margin>
+                  </Pane>
+                  <AnchorPane fx:id="pnlErro404" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="282.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="282.0" AnchorPane.topAnchor="87.0">
+                           <image>
+                              <Image url="@../modelo/icones/PageNotFoundGray.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="150.0" layoutY="295.0" prefHeight="17.0" text="Não foi possível encontrar o que deseja." textAlignment="CENTER" textFill="#686868" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="295.0">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Text fill="#686868" layoutX="187.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Talvez o que busca ainda não está em nosso banco de dados ou certifique-se que sua pesquisa está correta." wrappingWidth="500.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="320.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Label alignment="CENTER" layoutX="424.0" layoutY="202.0" prefHeight="17.0" text="Oops!" textAlignment="CENTER" textFill="#686868" AnchorPane.leftAnchor="424.0" AnchorPane.topAnchor="202.0">
+                           <font>
+                              <Font name="System Bold" size="45.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="125.0" />
+                     </StackPane.margin>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+            <AnchorPane fx:id="pnlPerfil" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="830.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+               <children>
+                  <ImageView fx:id="imgCapa" fitHeight="300.0" fitWidth="826.0" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-80.0" />
+                  <ScrollPane fx:id="scrollExibicao" focusTraversable="false" hbarPolicy="NEVER" layoutY="125.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefViewportHeight="410.0" prefViewportWidth="830.0" prefWidth="830.0" styleClass="barrarolagem" stylesheets="@../stylesheets/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
+                     <content>
+                        <StackPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="830.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="125.0">
+                           <children>
+                              <VBox fx:id="postTimeLine" alignment="TOP_CENTER" prefWidth="580.0" spacing="10.0">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" top="50.0" />
+                                 </padding>
+                                 <StackPane.margin>
+                                    <Insets left="100.0" right="150.0" />
+                                 </StackPane.margin>
+                                 <children>
+                                    <Pane fx:id="postFim" maxHeight="200.0" minHeight="200.0" prefHeight="200.0" prefWidth="570.0">
+                                       <children>
+                                          <Separator layoutX="81.0" layoutY="21.0" prefWidth="410.0" />
+                                          <Label alignment="CENTER" layoutX="230.0" layoutY="34.0" text="Isso é tudo!" textAlignment="CENTER" textFill="#686868">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fx:id="imgInfoPost" fitHeight="35.0" fitWidth="35.0" layoutX="268.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <image>
+                                                <Image url="@../modelo/icones/InfoGray_40px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Group fx:id="lblInfo">
+                                             <children>
+                                                <Text layoutX="95.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Este programa ainda está em uma versão Beta, algumas funções ou informações podem estar ausentes." textAlignment="CENTER" wrappingWidth="380.0">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Text>
+                                                <Label alignment="CENTER" layoutX="120.0" layoutY="115.0" text="Talvez possa ter (mais) proposições para este político." textAlignment="CENTER">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Group>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                              <AnchorPane fx:id="pnlSobre" maxHeight="370.0" maxWidth="-Infinity" prefWidth="690.0" style="-fx-background-color: #ffffff; -fx-background-radius: 4px;" visible="false" StackPane.alignment="TOP_CENTER">
+                                 <children>
+                                    <Label layoutX="321.0" layoutY="98.0" text="Ah, desculpe!" textFill="#686868" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="70.0">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Text fill="#686868" layoutX="129.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui serão mostrados mais detalhes sobre o político. Ainda estamos trabalhando nisso, em breve essas informações estarão disponíveis." wrappingWidth="400.0" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="105.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                                 <StackPane.margin>
+                                    <Insets left="70.0" right="70.0" top="10.0" />
+                                 </StackPane.margin></AnchorPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="25.0" />
+                           </padding>
+                        </StackPane>
+                     </content>
+                  </ScrollPane>
+                  <Circle fx:id="imgPerfil" fill="#d7d7d7" radius="55.0" stroke="WHITE" strokeWidth="2.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="40.0" />
+                  <HBox layoutX="220.0" layoutY="85.0" spacing="2.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="85.0">
+                     <children>
+                        <Label fx:id="lblNomeUrna" text="Nome de Urna" textFill="WHITE" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="85.0">
+                           <effect>
+                              <DropShadow height="6.0" radius="2.5" width="6.0" />
+                           </effect>
+                           <font>
+                              <Font name="Isidora Sans Alt Medium" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="114.0" layoutY="10.0" text=", n°" textFill="WHITE">
+                           <effect>
+                              <DropShadow height="6.0" radius="2.5" width="6.0" />
+                           </effect>
+                           <font>
+                              <Font name="Isidora Sans Alt Medium" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblNumero" layoutX="10.0" layoutY="10.0" text="00" textFill="WHITE">
+                           <effect>
+                              <DropShadow height="6.0" radius="2.5" width="6.0" />
+                           </effect>
+                           <font>
+                              <Font name="Isidora Sans Alt Medium" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label fx:id="lblCargo" text="CARGO" textFill="WHITE" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="62.0">
+                     <effect>
+                        <DropShadow height="6.0" radius="2.5" width="6.0" />
+                     </effect>
+                     <font>
+                        <Font name="IsidoraSansAlt-Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblSiglaPartido" alignment="CENTER_RIGHT" text="SIGLA" textAlignment="RIGHT" textFill="WHITE" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="10.0">
+                     <effect>
+                        <DropShadow height="6.0" radius="2.5" width="6.0" />
+                     </effect>
+                     <font>
+                        <Font name="IsidoraSansAlt-Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" layoutX="609.0" layoutY="84.0" spacing="10.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="85.0">
+                     <children>
+                        <JFXButton fx:id="btnSeguir" focusTraversable="false" onAction="#botaoSeguirAcao" prefWidth="120.0" ripplerFill="#9e9e9e" styleClass="buttonSeguirDefault" stylesheets="@../stylesheets/Styles.css" text="SEGUIR" textAlignment="CENTER" textFill="#686868" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="85.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnSobre" contentDisplay="RIGHT" focusTraversable="false" graphicTextGap="5.0" maxWidth="-Infinity" minWidth="-Infinity" onAction="#botaoSobreAcao" prefWidth="82.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px; -fx-border-color: #686868; -fx-border-radius: 5px;" text="+SOBRE" textFill="#686868">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../modelo/icones/More_25px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <BorderPane prefHeight="95.0" prefWidth="830.0" style="-fx-background-color: #FFD500;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TextField fx:id="txtSearch" focusTraversable="false" onMouseClicked="#textSearchClicked" prefHeight="25.0" prefWidth="250.0" promptText="Pesquisar proposição, projeto" styleClass="txtSearch" stylesheets="@../stylesheets/Styles.css" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets left="150.0" />
+               </BorderPane.margin>
+            </TextField>
+         </center>
+         <padding>
+            <Insets left="20.0" right="220.0" top="20.0" />
+         </padding>
+         <right>
+            <ImageView fx:id="imgSearch" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <image>
+                  <Image url="@../modelo/icones/SearchFlower_35px.png" />
+               </image>
+               <BorderPane.margin>
+                  <Insets left="5.0" />
+               </BorderPane.margin>
+            </ImageView>
+         </right>
+         <left>
+            <HBox alignment="CENTER_LEFT" pickOnBounds="false" spacing="5.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="imgVoltar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../modelo/icones/Back_Arrow_Transp_40px.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblVoltar" text="Voltar" textFill="#00305c">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets top="-40.0" />
+               </padding>
+            </HBox>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

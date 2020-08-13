@@ -1,0 +1,207 @@
+
+.buttonClose {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+}
+
+.buttonClose:hover {
+    -fx-background-color: #E81123;
+    -fx-background-radius: 0;
+}
+
+.buttonMinimize {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+}
+.buttonMinimize:hover {
+    -fx-background-color: #F5F5F5;
+    -fx-background-radius: 0;
+}
+
+.buttonMenu {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+}
+
+.buttonMenu:hover {
+    -fx-background-color: #75B9A8;
+    -fx-background-radius: 0px;
+}
+
+.buttonMenu:pressed {
+    -fx-background-color: #BADCD3;
+    -fx-background-radius: 0px;
+}
+
+.buttoMenuSelected {
+    -fx-background-color: #75B9A8;
+    -fx-background-radius: 0px;
+}
+
+.buttonLogout {
+    -fx-background-color: transparent;
+}
+
+.buttonLogout:hover {
+    -fx-background-color: #E34F54;
+}
+
+.buttonLogout:pressed {
+    -fx-background-color: #BADCD3;
+}
+
+.buttonPais {
+    -fx-background-color: transparent;
+    -fx-background-radius: 5;
+    -fx-text-fill: #686868;
+    -fx-border-color: #00305C;
+    -fx-border-radius: 5;
+}
+
+.buttonPais:hover {
+    -fx-background-color: #00305C;
+    -fx-background-radius: 5;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #00305C;
+    -fx-border-radius: 5;
+}
+
+.buttonFiltroSelected {
+    -fx-background-color: #00305C;
+    -fx-background-radius: 5;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #00305C;
+    -fx-border-radius: 5;
+}
+
+.buttonSeguirDefault {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5;
+    -fx-border-color: #686868;
+    -fx-border-radius: 5;
+    -fx-text-fill: #686868;
+}
+
+.buttonSeguirSelected {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5;
+    -fx-border-color: #00305C;
+    -fx-border-radius: 5;
+    -fx-text-fill: #00305C;
+    
+}
+
+.buttonSeguindo {
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 5;  
+    -fx-text-fill: #ffffff;
+}
+
+.buttonSeguindo:hover {
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 5;    
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5;
+    -fx-text-fill: #686868;
+}
+
+.buttonEntrar {
+    -fx-border-color:  #00305C;
+    -fx-border-radius: 2;
+}
+
+.txtSearch {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0px;
+    -fx-border-color: #c5c5c5;
+    -fx-border-radius: 0px;
+    -fx-prompt-text-fill: #686868;
+}
+
+.txtSearch:selected {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0px;
+    -fx-border-color: #686868;
+    -fx-border-radius: 0px;
+    -fx-prompt-text-fill: #686868;
+}
+
+.barrarolagem {
+    -fx-background-color: transparent;
+}
+
+.barrarolagem .scroll-bar:vertical .track,
+.barrarolagem .scroll-bar:horizontal .track {
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius: 0em;
+}
+
+.barrarolagem .scroll-bar:horizontal .increment-button,
+.barrarolagem .scroll-bar:horizontal .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 0 10 0;
+}
+
+.barrarolagem .scroll-bar:vertical .increment-button,
+.barrarolagem .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 10 0 0;
+}
+
+.barrarolagem .scroll-bar .increment-arrow,
+.barrarolagem .scroll-bar .decrement-arrow {
+    -fx-shape: "";
+    -fx-padding: 0;
+}
+
+.barrarolagem .scroll-bar:horizontal .thumb,
+.barrarolagem .scroll-bar:vertical .thumb {
+    -fx-background-color: derive(gray, 60%);
+    -fx-background-insets: 4, 0, 0;
+    -fx-background-radius: 0em;
+}
+
+.barrarolagem .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: derive(gray, 30%);
+    -fx-background-insets: 1, 0, 0;
+}
+.barrarolagem .scroll-bar:vertical .thumb:pressed {
+    -fx-background-color: derive(black, 90%);
+    -fx-background-insets: 1, 0, 0;
+}
+
+.scrollicones .scroll-bar:vertical:disabled {
+    -fx-opacity: 0;
+}
+
+.textfield {
+    -fx-background-color: #133A57;
+    -fx-background-radius: 0px;
+    -fx-border-color: #133A57;
+    -fx-border-radius: 0px;
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: white;
+}
+
+.textfield:selected {
+    -fx-background-color: #133A57;
+    -fx-background-radius: 0px;
+    -fx-border-color: #133A57;
+    -fx-border-radius: 0px;
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: white;
+}
+
+.textfieldError {
+    -fx-background-color: #133A57;
+    -fx-background-radius: 0px;
+    -fx-border-color: #E81123;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 0px;
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: white;
+}

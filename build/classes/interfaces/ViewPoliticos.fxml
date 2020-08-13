@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="630.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewPoliticosController">
+   <children>
+      <BorderPane prefHeight="95.0" prefWidth="830.0" style="-fx-background-color: #FFD500;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TextField fx:id="txtSearch" focusTraversable="false" onAction="#textSearchAction" onMouseClicked="#textSearchClicked" prefHeight="25.0" prefWidth="250.0" promptText="Pesquisar cidade, político, partido" styleClass="txtSearch" stylesheets="@../stylesheets/Styles.css" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets left="150.0" />
+               </BorderPane.margin>
+            </TextField>
+         </center>
+         <padding>
+            <Insets left="20.0" right="220.0" top="20.0" />
+         </padding>
+         <right>
+            <ImageView fx:id="imgSearch" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <image>
+                  <Image url="@../modelo/icones/SearchFlower_35px.png" />
+               </image>
+               <BorderPane.margin>
+                  <Insets left="5.0" />
+               </BorderPane.margin>
+            </ImageView>
+         </right>
+         <left>
+            <HBox alignment="CENTER_LEFT" pickOnBounds="false" spacing="5.0">
+               <children>
+                  <ImageView fx:id="imgVoltar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../modelo/icones/Back_Arrow_Transp_40px.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblVoltar" text="Voltar" textFill="#00305c">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets top="-40.0" />
+               </padding>
+            </HBox>
+         </left>
+      </BorderPane>
+      <ScrollPane focusTraversable="false" hbarPolicy="NEVER" layoutY="94.0" prefHeight="535.0" prefWidth="830.0" styleClass="barrarolagem" stylesheets="@../stylesheets/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+         <content>
+            <StackPane fx:id="areaExibicao" prefHeight="533.0" prefWidth="830.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <BorderPane fx:id="bpCidade" prefWidth="815.0" style="-fx-background-color: #ffffff;">
+                     <center>
+                        <StackPane fx:id="areaPoliticosCidade" prefWidth="830.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+                           <children>
+                              <StackPane fx:id="areaErrosCidade" maxHeight="445.0" maxWidth="830.0" prefHeight="445.0" prefWidth="830.0" style="-fx-background-color: #ffffff;" StackPane.alignment="TOP_CENTER">
+                                 <children>
+                                    <Pane style="-fx-background-color: #ffffff;">
+                                       <children>
+                                          <Label fx:id="lblErroDetalhes" alignment="CENTER" layoutX="150.0" prefHeight="17.0" text="Detalhes" textAlignment="CENTER" textFill="#686868">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                             <StackPane.margin>
+                                                <Insets right="465.0" top="340.0" />
+                                             </StackPane.margin>
+                                          </Label>
+                                          <Label fx:id="lblErro" layoutX="150.0" layoutY="35.0" prefHeight="25.0" text="#Error code:" textFill="#d37e7e">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <StackPane.margin>
+                                                <Insets right="490.0" top="410.0" />
+                                             </StackPane.margin>
+                                          </Label>
+                                       </children>
+                                       <StackPane.margin>
+                                          <Insets top="345.0" />
+                                       </StackPane.margin>
+                                    </Pane>
+                                    <AnchorPane fx:id="pnlErro500" prefHeight="350.0" prefWidth="830.0" style="-fx-background-color: #ffffff;">
+                                       <children>
+                                          <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="40.0">
+                                             <image>
+                                                <Image url="@../modelo/icones/DamagedRobot.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="17.0" text="Ah, não!" textAlignment="CENTER" textFill="#686868" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="255.0">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="17.0" text="Não foi possível carregar está página." textAlignment="CENTER" textFill="#686868" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="280.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <StackPane.margin>
+                                          <Insets bottom="105.0" />
+                                       </StackPane.margin>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="pnlErro404" prefHeight="350.0" prefWidth="830.0" style="-fx-background-color: #ffffff;">
+                                       <children>
+                                          <ImageView fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="282.0" AnchorPane.topAnchor="45.0">
+                                             <image>
+                                                <Image url="@../modelo/icones/PageNotFoundGray.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="17.0" text="Oops!" textAlignment="CENTER" textFill="#686868" AnchorPane.leftAnchor="424.0" AnchorPane.topAnchor="160.0">
+                                             <font>
+                                                <Font name="System Bold" size="45.0" />
+                                             </font>
+                                          </Label>
+                                          <Text fill="#686868" strokeType="OUTSIDE" strokeWidth="0.0" text="Talvez o que busca ainda não está em nosso banco de dados ou certifique-se que sua pesquisa está correta." wrappingWidth="500.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="278.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Text>
+                                          <Label alignment="CENTER" prefHeight="17.0" text="Não foi possível encontrar o que deseja." textAlignment="CENTER" textFill="#686868" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="253.0">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <StackPane.margin>
+                                          <Insets bottom="105.0" />
+                                       </StackPane.margin>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="pnlErroCidade" prefHeight="530.0" prefWidth="815.0" style="-fx-background-color: #ffffff;">
+                                       <children>
+                                          <Label alignment="CENTER" layoutX="68.0" layoutY="290.0" prefHeight="17.0" text="Não foi possível encontrar o que deseja." textAlignment="CENTER" textFill="#686868" AnchorPane.leftAnchor="150.0">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Text fill="#686868" layoutX="57.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ainda não há políticos cadastrados em nosso banco de dados para esta cidade." wrappingWidth="500.0" AnchorPane.leftAnchor="150.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Text>
+                                          <Label alignment="CENTER" layoutX="293.0" layoutY="79.0" prefHeight="17.0" text="Oops! Nada aqui." textAlignment="CENTER" textFill="#686868" AnchorPane.leftAnchor="285.0" AnchorPane.topAnchor="79.0">
+                                             <font>
+                                                <Font name="System Bold" size="30.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </StackPane>
+                     </center>
+                     <top>
+                        <Pane prefWidth="815.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox prefWidth="815.0" spacing="5.0">
+                                 <children>
+                                    <Label fx:id="lblCidade" text="Pesquisa por &quot;Cidade&quot;" textFill="#515151">
+                                       <font>
+                                          <Font name="Isidora Sans Alt Medium" size="24.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="20.0" top="25.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Separator focusTraversable="false" prefHeight="10.0" prefWidth="450.0">
+                                       <padding>
+                                          <Insets left="250.0" right="250.0" top="20.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Separator>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                     </top>
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                  </BorderPane>
+                  <StackPane fx:id="areaMensagem" maxHeight="535.0" maxWidth="830.0" prefHeight="535.0" prefWidth="815.0" visible="false" StackPane.alignment="TOP_CENTER">
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                  </StackPane>
+                  <BorderPane fx:id="bpEstado" prefWidth="815.0" style="-fx-background-color: #ffffff;">
+                     <top>
+                        <Pane prefWidth="815.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox prefWidth="815.0" spacing="5.0">
+                                 <children>
+                                    <Label fx:id="lblEstado" text="Políticos do Estado" textFill="#515151">
+                                       <font>
+                                          <Font name="Isidora Sans Alt Medium" size="24.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="20.0" top="25.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="815.0" spacing="20.0">
+                                       <children>
+                                          <Button fx:id="btnFiltroGovernador" mnemonicParsing="false" onAction="#filtroSelectedAction" prefHeight="30.0" prefWidth="150.0" styleClass="buttonPais" stylesheets="@../stylesheets/Styles.css" text="GOVERNADOR" textFill="WHITE">
+                                             <font>
+                                                <Font name="IsidoraSansAlt-Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnFiltroSenadores" mnemonicParsing="false" onAction="#filtroSelectedAction" prefHeight="30.0" prefWidth="150.0" styleClass="buttonPais" stylesheets="@../stylesheets/Styles.css" text="SENADORES" textFill="WHITE">
+                                             <font>
+                                                <Font name="IsidoraSansAlt-Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnFiltroDepFederais" mnemonicParsing="false" onAction="#filtroSelectedAction" prefHeight="30.0" prefWidth="150.0" styleClass="buttonPais" stylesheets="@../stylesheets/Styles.css" text="DEP. FEDERAIS" textFill="WHITE">
+                                             <font>
+                                                <Font name="IsidoraSansAlt-Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnFiltroDepEstadual" mnemonicParsing="false" onAction="#filtroSelectedAction" prefHeight="30.0" prefWidth="150.0" styleClass="buttonPais" stylesheets="@../stylesheets/Styles.css" text="DEP. ESTADUAIS" textFill="WHITE">
+                                             <font>
+                                                <Font name="IsidoraSansAlt-Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets left="80.0" />
+                                       </padding>
+                                    </HBox>
+                                    <Separator focusTraversable="false" prefHeight="10.0" prefWidth="450.0">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets left="250.0" right="250.0" top="20.0" />
+                                       </padding>
+                                    </Separator>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                     </top>
+                     <center>
+                        <StackPane fx:id="areaPoliticosEstado" prefWidth="815.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TilePane fx:id="areaFiltro" hgap="15.0" prefWidth="815.0" style="-fx-background-color: #ffffff;" vgap="15.0">
+                                 <padding>
+                                    <Insets bottom="20.0" left="35.0" top="35.0" />
+                                 </padding>
+                                 <StackPane.margin>
+                                    <Insets />
+                                 </StackPane.margin>
+                              </TilePane>
+                              <AnchorPane fx:id="pnlErroEstado" prefHeight="530.0" prefWidth="815.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="68.0" layoutY="290.0" prefHeight="17.0" text="Não foi possível encontrar o que deseja." textAlignment="CENTER" textFill="#686868" AnchorPane.leftAnchor="150.0">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Text fill="#686868" layoutX="57.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ainda não há políticos do cargo selecionado cadastrado em nosso banco de dados neste estado." wrappingWidth="500.0" AnchorPane.leftAnchor="150.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Label alignment="CENTER" layoutX="293.0" layoutY="79.0" prefHeight="17.0" text="Oops! Nada aqui." textAlignment="CENTER" textFill="#686868" AnchorPane.leftAnchor="285.0" AnchorPane.topAnchor="79.0">
+                                       <font>
+                                          <Font name="System Bold" size="30.0" />
+                                       </font>
+                                    </Label>
+                                 </children></AnchorPane>
+                           </children>
+                        </StackPane>
+                     </center>
+                  </BorderPane>
+               </children>
+               <padding>
+                  <Insets right="15.0" />
+               </padding>
+            </StackPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

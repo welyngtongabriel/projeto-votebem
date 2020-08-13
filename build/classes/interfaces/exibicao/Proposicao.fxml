@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="570.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.exibicao.ProposicaoController">
+   <children>
+      <HBox spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="lblNomeIniciativa" text="Nome Iniciativa">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="enviou nova matéria" />
+         </children>
+      </HBox>
+      <Label fx:id="lblData" alignment="CENTER_RIGHT" text="01 de Dezembro, 2018" textAlignment="RIGHT" textFill="#686868" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <VBox prefWidth="550.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <Label fx:id="lblTitulo" text="Titulo/Tipo do assunto" textFill="#686868">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCodigo" layoutX="10.0" layoutY="10.0" text="Código" textFill="#686868">
+               <VBox.margin>
+                  <Insets top="-2.0" />
+               </VBox.margin>
+            </Label>
+            <Text fx:id="lblTxtEmenta" strokeType="OUTSIDE" strokeWidth="0.0" text="Texto da Ementa" textAlignment="JUSTIFY" wrappingWidth="550.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Text>
+            <Line endX="550.0" stroke="#d7d7d7">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Line>
+            <Label text="Desmonstre sua opnião! Assim outros também votaram.">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin></Label>
+            <AnchorPane prefHeight="35.0" prefWidth="550.0">
+               <children>
+                  <HBox layoutX="10.0" layoutY="4.0" spacing="15.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="2.0">
+                     <children>
+                        <ImageView fx:id="imgLike" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#cliquesLike" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../modelo/icones/LikeDesmarc_35px.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fx:id="imgDeslike" fitHeight="25.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#cliquesLike" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                           <image>
+                              <Image url="@../../modelo/icones/LikeDesmarc_35px.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets top="6.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_RIGHT" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Label fx:id="lblTotVotos" alignment="CENTER_RIGHT" text="N" textAlignment="RIGHT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblVotaram" alignment="CENTER_RIGHT" text="Votos" textAlignment="RIGHT" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="2.0" left="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>
